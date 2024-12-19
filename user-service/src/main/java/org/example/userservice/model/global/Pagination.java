@@ -1,4 +1,4 @@
-package shop.haui_megatech.domain.dto.global;
+package org.example.userservice.model.global;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;

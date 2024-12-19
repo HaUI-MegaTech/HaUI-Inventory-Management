@@ -1,4 +1,4 @@
-package shop.haui_megatech.domain.dto.global;
+package org.example.userservice.model.global;
 
 public enum Status {
     SUCCESS,

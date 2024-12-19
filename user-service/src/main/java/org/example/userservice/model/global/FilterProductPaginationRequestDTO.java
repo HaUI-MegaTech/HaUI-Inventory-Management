@@ -1,4 +1,4 @@
-package shop.haui_megatech.domain.dto.global;
+package org.example.userservice.model.global;
 
 import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.web.bind.annotation.RequestParam;
