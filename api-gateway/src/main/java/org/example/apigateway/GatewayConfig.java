@@ -27,6 +27,14 @@ public class GatewayConfig {
                                 )
                                 .uri("http://localhost:8082/")
                 )
+                .route(predicateSpec ->
+                        predicateSpec
+                                .path("/api/v1/carts/**")
+                                .filters(gatewayFilterSpec ->
+                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
+                                )
+                                .uri("http://localhost:8083/")
+                )
                 .build();
     }
 }
