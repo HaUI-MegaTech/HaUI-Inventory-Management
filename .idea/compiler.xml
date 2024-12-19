@@ -3,7 +3,7 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for mail-service" enabled="true">
+      <profile name="Annotation profile for file-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -17,6 +17,7 @@
         <module name="product-service" />
         <module name="order-service" />
         <module name="user-service" />
+        <module name="file-service" />
         <module name="mail-service" />
       </profile>
     </annotationProcessing>
@@ -26,6 +27,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="brand-service" options="-parameters" />
       <module name="cart-service" options="-parameters" />
+      <module name="file-service" options="-parameters" />
       <module name="mail-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />

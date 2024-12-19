@@ -67,6 +67,14 @@ public class GatewayConfig {
                                 )
                                 .uri("http://localhost:8087/")
                 )
+                .route(predicateSpec ->
+                        predicateSpec
+                                .path("/api/v1/files/**")
+                                .filters(gatewayFilterSpec ->
+                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
+                                )
+                                .uri("http://localhost:8088/")
+                )
                 .build();
     }
 }
