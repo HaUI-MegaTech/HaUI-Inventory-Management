@@ -1,4 +1,4 @@
-package org.example.userservice.dto;
+package org.example.userservice.dto.user;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;

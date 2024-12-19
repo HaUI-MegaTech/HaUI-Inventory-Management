@@ -1,4 +1,4 @@
-package org.example.userservice.model.global;
+package org.example.userservice.shared.global;
 
 public enum Status {
     SUCCESS,

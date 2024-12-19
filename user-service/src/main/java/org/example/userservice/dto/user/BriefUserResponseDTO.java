@@ -1,8 +1,8 @@
-package org.example.userservice.dto;
+package org.example.userservice.dto.user;
 
 import lombok.Builder;
-import shop.haui_megatech.domain.entity.enums.Gender;
-import shop.haui_megatech.domain.entity.enums.Role;
+import org.example.userservice.shared.entity.enums.Gender;
+import org.example.userservice.shared.entity.enums.Role;
 
 @Builder
 public record BriefUserResponseDTO(

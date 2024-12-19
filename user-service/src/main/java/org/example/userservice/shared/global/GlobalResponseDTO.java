@@ -1,4 +1,4 @@
-package org.example.userservice.model.global;
+package org.example.userservice.shared.global;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;

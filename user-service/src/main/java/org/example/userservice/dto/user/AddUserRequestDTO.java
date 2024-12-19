@@ -1,8 +1,8 @@
-package org.example.userservice.dto;
+package org.example.userservice.dto.user;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import shop.haui_megatech.constant.ErrorMessage;
+import org.example.userservice.shared.constant.ErrorMessage;
 
 public record AddUserRequestDTO(
         @Size(min = 4, message = ErrorMessage.User.DEFICIENT_USERNAME_LENGTH)

@@ -1,5 +1,38 @@
 spring:
   application:
     name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/user-db
+    username: root
+    password: root
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 10
+      maximum-pool-size: 20
+      idle-timeout: 10000
+      max-lifetime: 1800000
+      auto-commit: true
+
+    jpa:
+      open-in-view: false
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+  kafka:
+    consumer:
+      group-id: internal-group
+      bootstrap-servers: localhost:9092, localhost:9093, localhost:9094
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+      auto-offset-reset: earliest
+    producer:
+      bootstrap-servers: localhost:9092, localhost:9093, localhost:9094
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  messages:
+    basename: i18n/messages
+    default-encoding: UTF-8
 server:
   port: 8081

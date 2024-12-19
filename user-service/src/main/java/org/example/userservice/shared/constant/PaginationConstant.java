@@ -1,4 +1,4 @@
-package shop.haui_megatech.constant;
+package org.example.userservice.shared.constant;
 
 public class PaginationConstant {
     public static final Integer DEFAULT_PAGE_INDEX = 0;

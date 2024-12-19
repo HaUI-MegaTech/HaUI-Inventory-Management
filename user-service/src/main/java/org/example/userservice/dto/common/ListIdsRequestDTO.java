@@ -1,4 +1,4 @@
-package shop.haui_megatech.domain.dto.common;
+package org.example.userservice.dto.common;
 
 import lombok.Builder;
 

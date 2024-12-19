@@ -1,11 +1,11 @@
-package org.example.userservice.dto;
+package org.example.userservice.dto.user;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
-import shop.haui_megatech.constant.DatetimeFormat;
-import shop.haui_megatech.domain.entity.Address;
-import shop.haui_megatech.domain.entity.enums.Gender;
-import shop.haui_megatech.domain.entity.enums.Role;
+import org.example.userservice.shared.constant.DatetimeFormat;
+import org.example.userservice.shared.entity.Address;
+import org.example.userservice.shared.entity.enums.Gender;
+import org.example.userservice.shared.entity.enums.Role;
 
 import java.util.Date;
 import java.util.List;
