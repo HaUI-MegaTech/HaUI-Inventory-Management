@@ -3,18 +3,19 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for payment-service" enabled="true">
+      <profile name="Annotation profile for order-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="api-gateway" />
-        <module name="product-service" />
         <module name="brand-service" />
         <module name="cart-service" />
         <module name="payment-service" />
+        <module name="api-gateway" />
+        <module name="product-service" />
+        <module name="order-service" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="brand-service" options="-parameters" />
       <module name="cart-service" options="-parameters" />
+      <module name="order-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
