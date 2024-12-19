@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService {
         if (!request.password().equals(request.confirmPassword()))
             throw new MismatchedConfirmPasswordException(ErrorMessage.User.MISMATCHED_PASSWORD);
 
-        if (userRepository.findUserByUsername(request.username()).isPresent())
+        if (userRepository.findByUsername(request.username()).isPresent())
             throw new DuplicateUsernameException(ErrorMessage.Request.DUPLICATE_USERNAME);
 
         return GlobalResponseDTO

@@ -22,7 +22,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     Optional<User> findActiveUserByUsername(String username);
 
 
-    Optional<User> findUserByUsername(String username);
+    Optional<User> findByUsername(String username);
 
 
     @Query(
