@@ -75,6 +75,14 @@ public class GatewayConfig {
                                 )
                                 .uri("http://localhost:8088/")
                 )
+                .route(predicateSpec ->
+                        predicateSpec
+                                .path("/api/v1/auth/**")
+                                .filters(gatewayFilterSpec ->
+                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
+                                )
+                                .uri("http://localhost:8089/")
+                )
                 .build();
     }
 }
