@@ -59,6 +59,14 @@ public class GatewayConfig {
                                 )
                                 .uri("http://localhost:8086/")
                 )
+                .route(predicateSpec ->
+                        predicateSpec
+                                .path("/api/v1/mails/**")
+                                .filters(gatewayFilterSpec ->
+                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
+                                )
+                                .uri("http://localhost:8087/")
+                )
                 .build();
     }
 }
