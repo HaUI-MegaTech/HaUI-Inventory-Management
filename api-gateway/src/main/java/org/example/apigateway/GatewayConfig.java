@@ -43,6 +43,14 @@ public class GatewayConfig {
                                 )
                                 .uri("http://localhost:8084/")
                 )
+                .route(predicateSpec ->
+                        predicateSpec
+                                .path("/api/v1/brands/**")
+                                .filters(gatewayFilterSpec ->
+                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
+                                )
+                                .uri("http://localhost:8085/")
+                )
                 .build();
     }
 }
