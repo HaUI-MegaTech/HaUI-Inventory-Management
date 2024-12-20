@@ -1,4 +1,4 @@
-package org.example.authservice;
+package org.example.authservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

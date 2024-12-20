@@ -1,5 +1,26 @@
 spring:
   application:
     name: auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/user-db
+    username: root
+    password: root
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 10
+      maximum-pool-size: 20
+      idle-timeout: 10000
+      max-lifetime: 1800000
+      auto-commit: true
+
+    jpa:
+      open-in-view: false
+      hibernate:
+        ddl-auto: update
+      show-sql: true
 server:
   port: 8089
+app:
+  jwt:
+    secret-key: evqSvEusWnP73XRuchvNKK4FFNa+jgevEgsMbnmdS42eqN98e7TdW3+JA6lSHZthj8Lb7iR9ElYdLMAZZoqx4sx2kngytOo+kuFgPtOOFqp/iKd6AbuUgDiSYySg5gatWCb0YRas4jtaHtyCZ4JN6TdXXjyNYv59MBzF77zpVYl2Q0cSFtKgNv3crI8I8tZtKsXuaX0aHCknplAIJlu9xNR1+yn3wV5qfHnjORlbKaiLqpJ98wlfhTvOyKDNdasniKAzAQM1EOwwOFDTTeJrPN5W1bv8efehi9d43MaiOO/xOFKKmfUKhBTQbdd1VR5ulB90EDiszn6yx5pcb2PxueQpfm2/EQQoazIGDw2YDNU=
+    ttl-in-seconds: 30000000
