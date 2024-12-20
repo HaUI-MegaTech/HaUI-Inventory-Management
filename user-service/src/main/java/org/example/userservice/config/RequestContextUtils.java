@@ -1,4 +1,4 @@
-package org.example.distributedauthentication.security;
+package org.example.userservice.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
@@ -7,9 +7,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.util.Objects;
 
-/**
- * Phục vụ cho method: public boolean authorize(Authentication authentication, String action, Object callerObj, HttpServletRequest request)
- */
 @Component
 public class RequestContextUtils {
 

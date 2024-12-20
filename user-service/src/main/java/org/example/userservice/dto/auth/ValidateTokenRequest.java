@@ -1,14 +1,12 @@
-package org.example.authservice.dto.auth;
+package org.example.userservice.dto.auth;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class ValidateTokenRequest {
     private String token;
 }
