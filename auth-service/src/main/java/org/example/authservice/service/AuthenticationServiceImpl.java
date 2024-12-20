@@ -4,7 +4,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.example.authservice.dto.auth.AuthenticationRequestDTO;
 import org.example.authservice.dto.auth.RefreshTokenRequestDTO;
+import org.example.authservice.dto.auth.ValidateTokenRequest;
 import org.example.authservice.dto.user.AddUserRequestDTO;
+import org.example.authservice.dto.user.FullUserResponseDTO;
 import org.example.authservice.mapper.UserMapper;
 import org.example.authservice.repository.TokenRepository;
 import org.example.authservice.repository.UserRepository;
@@ -24,6 +26,8 @@ import org.example.authservice.shared.util.NetworkUtil;
 import org.example.authservice.shared.validator.RequestValidator;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +46,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenUtil          jwtUtil;
     private final MessageSourceUtil     messageSourceUtil;
+    private final UserDetailsService userDetailsService;
+    private static final String AUTH_PREFIX = "Bearer ";
 
     private Token generateRefreshToken(HttpServletRequest request, User owner) {
         return tokenRepository.save(
@@ -57,6 +63,33 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                      .owner(owner)
                      .build()
         );
+    }
+
+    @Override
+    public GlobalResponseDTO<NoPaginatedMeta, FullUserResponseDTO> validate(ValidateTokenRequest request) {
+        String jwt = request.getToken().substring(AUTH_PREFIX.length());
+        String username = jwtUtil.extractUsername(jwt);
+
+        UserDetails userDetails;
+        try {
+            userDetails = userDetailsService.loadUserByUsername(username);
+        } catch (Exception e) {
+            userDetails = null;
+        }
+
+        return GlobalResponseDTO
+                .<NoPaginatedMeta, FullUserResponseDTO>builder()
+                .meta(NoPaginatedMeta
+                        .builder()
+                        .status(Status.SUCCESS)
+                        .message(messageSourceUtil.getMessage(SuccessMessage.Auth.AUTHENTICATED))
+                        .build()
+                )
+                .data(userDetails == null
+                      ? null
+                      : FullUserResponseDTO.builder().username(userDetails.getUsername()).build()
+                )
+                .build();
     }
 
     @Override

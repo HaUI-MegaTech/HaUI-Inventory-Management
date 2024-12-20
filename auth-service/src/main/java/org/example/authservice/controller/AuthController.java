@@ -4,7 +4,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.example.authservice.dto.auth.AuthenticationRequestDTO;
 import org.example.authservice.dto.auth.RefreshTokenRequestDTO;
+import org.example.authservice.dto.auth.ValidateTokenRequest;
 import org.example.authservice.dto.user.AddUserRequestDTO;
+import org.example.authservice.dto.user.FullUserResponseDTO;
 import org.example.authservice.service.AuthenticationService;
 import org.example.authservice.shared.constant.Endpoint;
 import org.example.authservice.shared.global.AuthData;
@@ -12,12 +14,20 @@ import org.example.authservice.shared.global.GlobalResponseDTO;
 import org.example.authservice.shared.global.NoPaginatedMeta;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthenticationService service;
+
+    @PostMapping(Endpoint.V1.Auth.VALIDATE)
+    public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, FullUserResponseDTO>> validate(
+            @RequestBody ValidateTokenRequest request
+    ) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.validate(request));
+    }
 
     @PostMapping(Endpoint.V1.Auth.REGISTER)
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, AuthData>> register(

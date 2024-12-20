@@ -3,12 +3,16 @@ package org.example.authservice.service;
 import jakarta.servlet.http.HttpServletRequest;
 import org.example.authservice.dto.auth.AuthenticationRequestDTO;
 import org.example.authservice.dto.auth.RefreshTokenRequestDTO;
+import org.example.authservice.dto.auth.ValidateTokenRequest;
 import org.example.authservice.dto.user.AddUserRequestDTO;
+import org.example.authservice.dto.user.FullUserResponseDTO;
 import org.example.authservice.shared.global.AuthData;
 import org.example.authservice.shared.global.GlobalResponseDTO;
 import org.example.authservice.shared.global.NoPaginatedMeta;
 
 public interface AuthenticationService {
+    GlobalResponseDTO<NoPaginatedMeta, FullUserResponseDTO> validate(ValidateTokenRequest request);
+
     GlobalResponseDTO<NoPaginatedMeta, AuthData> register(AddUserRequestDTO request, HttpServletRequest servletRequest);
 
     GlobalResponseDTO<NoPaginatedMeta, AuthData> authenticate(AuthenticationRequestDTO request, HttpServletRequest servletRequest);

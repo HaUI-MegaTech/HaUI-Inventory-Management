@@ -115,6 +115,7 @@ public class Endpoint {
             public static final String AUTHENTICATE = PREFIX + "/authenticate";
             public static final String REFRESH      = PREFIX + "/refresh";
             public static final String LOGOUT       = PREFIX + "/logout";
+            public static final String VALIDATE     = PREFIX + "/validate";
         }
 
         public static final class Location {
