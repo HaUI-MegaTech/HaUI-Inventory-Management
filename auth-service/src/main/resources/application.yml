@@ -18,6 +18,9 @@ spring:
       hibernate:
         ddl-auto: update
       show-sql: true
+  messages:
+    basename: i18n/messages
+    default-encoding: UTF-8
 server:
   port: 8089
 app:
