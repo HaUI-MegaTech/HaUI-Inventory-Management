@@ -1,4 +1,4 @@
-package org.example.userservice.config;
+package org.example.userservice.shared.config;
 
 import lombok.RequiredArgsConstructor;
 import org.example.userservice.repository.UserRepository;

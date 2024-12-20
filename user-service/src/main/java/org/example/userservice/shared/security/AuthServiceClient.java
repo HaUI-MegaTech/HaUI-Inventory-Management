@@ -1,4 +1,4 @@
-package org.example.userservice.feign;
+package org.example.userservice.shared.security;
 
 import org.example.userservice.dto.auth.ValidateTokenRequest;
 import org.example.userservice.dto.user.FullUserResponseDTO;
@@ -7,7 +7,6 @@ import org.example.userservice.shared.global.NoPaginatedMeta;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 

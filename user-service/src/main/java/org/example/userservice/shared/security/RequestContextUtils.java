@@ -1,4 +1,4 @@
-package org.example.userservice.config;
+package org.example.userservice.shared.security;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;

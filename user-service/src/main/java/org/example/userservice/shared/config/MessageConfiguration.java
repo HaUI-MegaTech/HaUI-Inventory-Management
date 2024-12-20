@@ -1,4 +1,4 @@
-package org.example.userservice.config;
+package org.example.userservice.shared.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;

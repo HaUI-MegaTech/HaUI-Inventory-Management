@@ -1,10 +1,9 @@
-package org.example.userservice.config;
+package org.example.userservice.shared.security;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.example.userservice.dto.auth.ValidateTokenRequest;
 import org.example.userservice.dto.user.FullUserResponseDTO;
-import org.example.userservice.feign.AuthServiceClient;
 import org.example.userservice.shared.global.GlobalResponseDTO;
 import org.example.userservice.shared.global.NoPaginatedMeta;
 import org.springframework.http.HttpHeaders;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 @Service(value = "appAuthorizer")
 @RequiredArgsConstructor
