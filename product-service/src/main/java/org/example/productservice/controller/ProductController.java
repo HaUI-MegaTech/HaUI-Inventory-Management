@@ -59,6 +59,7 @@ public class ProductController {
     }
 
     @GetMapping(Endpoint.V1.Product.GET_HIDDEN_LIST)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<PaginatedMeta, List<BriefProductResponseDTO>>> getHiddenList(
             @ModelAttribute PaginationRequestDTO request
     ) {
@@ -68,6 +69,7 @@ public class ProductController {
     }
 
     @GetMapping(Endpoint.V1.Product.GET_DELETED_LIST)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<PaginatedMeta, List<BriefProductResponseDTO>>> getDeletedList(
             @ModelAttribute PaginationRequestDTO request
     ) {
@@ -77,6 +79,7 @@ public class ProductController {
     }
 
     @PostMapping(Endpoint.V1.Product.ADD_ONE)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, BriefProductResponseDTO>> addOne(
             @RequestBody AddProductRequestDTO request
     ) {
@@ -100,6 +103,7 @@ public class ProductController {
 //    }
 
     @PutMapping(Endpoint.V1.Product.UPDATE_ONE)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> updateOne(
             @PathVariable Integer productId,
             @RequestBody UpdateProductRequestDTO request
@@ -115,6 +119,7 @@ public class ProductController {
 //    }
 
     @PatchMapping(Endpoint.V1.Product.SOFT_DELETE_ONE)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> softDeleteOne(
             @PathVariable Integer productId
     ) {
@@ -122,6 +127,7 @@ public class ProductController {
     }
 
     @PatchMapping(Endpoint.V1.Product.SOFT_DELETE_LIST)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> softDeleteList(
             @RequestBody ListIdsRequestDTO request
     ) {
@@ -129,6 +135,7 @@ public class ProductController {
     }
 
     @PatchMapping(Endpoint.V1.Product.RESTORE_ONE)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> restoreOne(
             @PathVariable Integer productId
     ) {
@@ -136,6 +143,7 @@ public class ProductController {
     }
 
     @PatchMapping(Endpoint.V1.Product.RESTORE_LIST)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> restoreList(
             @RequestBody ListIdsRequestDTO request
     ) {
@@ -143,6 +151,7 @@ public class ProductController {
     }
 
     @PatchMapping(Endpoint.V1.Product.HIDE_ONE)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> hideOne(
             @PathVariable Integer productId
     ) {
@@ -150,6 +159,7 @@ public class ProductController {
     }
 
     @PatchMapping(Endpoint.V1.Product.HIDE_LIST)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> hideList(
             @RequestBody ListIdsRequestDTO request
     ) {
@@ -157,6 +167,7 @@ public class ProductController {
     }
 
     @PatchMapping(Endpoint.V1.Product.EXPOSE_ONE)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> exposeOne(
             @PathVariable Integer productId
     ) {
@@ -164,6 +175,7 @@ public class ProductController {
     }
 
     @PatchMapping(Endpoint.V1.Product.EXPOSE_LIST)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> exposeList(
             @RequestBody ListIdsRequestDTO request
     ) {
@@ -171,6 +183,7 @@ public class ProductController {
     }
 
     @DeleteMapping(Endpoint.V1.Product.HARD_DELETE_ONE)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> hardDeleteOne(
             @PathVariable Integer productId
     ) {
@@ -178,6 +191,7 @@ public class ProductController {
     }
 
     @DeleteMapping(Endpoint.V1.Product.HARD_DELETE_LIST)
+    @PreAuthorize("@appAuthorizer.authorize(authentication, this, @requestContextUtils.getCurrentHttpRequest())")
     public ResponseEntity<GlobalResponseDTO<NoPaginatedMeta, Void>> hardDeleteList(
             @RequestBody ListIdsRequestDTO request
     ) {
