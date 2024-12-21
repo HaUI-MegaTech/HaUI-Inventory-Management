@@ -15,7 +15,6 @@
         <module name="cart-service" />
         <module name="payment-service" />
         <module name="api-gateway" />
-        <module name="product-service" />
         <module name="order-service" />
         <module name="file-service" />
         <module name="mail-service" />
@@ -32,7 +31,7 @@
       <module name="mail-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />
-      <module name="product-service" options="-parameters" />
+      <module name="product-service" options="-parameters -proc:none" />
       <module name="user-service" options="-parameters -proc:none" />
     </option>
   </component>
