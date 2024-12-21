@@ -11,78 +11,15 @@ public class GatewayConfig {
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder
                 .routes()
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/users/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello product service....")
-                                )
-                                .uri("http://localhost:8081/")
-                )
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/products/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
-                                )
-                                .uri("http://localhost:8082/")
-                )
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/carts/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
-                                )
-                                .uri("http://localhost:8083/")
-                )
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/payments/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
-                                )
-                                .uri("http://localhost:8084/")
-                )
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/brands/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
-                                )
-                                .uri("http://localhost:8085/")
-                )
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/orders/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
-                                )
-                                .uri("http://localhost:8086/")
-                )
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/mails/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
-                                )
-                                .uri("http://localhost:8087/")
-                )
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/files/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
-                                )
-                                .uri("http://localhost:8088/")
-                )
-                .route(predicateSpec ->
-                        predicateSpec
-                                .path("/api/v1/auth/**")
-                                .filters(gatewayFilterSpec ->
-                                        gatewayFilterSpec.addRequestHeader("src", "hello user service....")
-                                )
-                                .uri("http://localhost:8089/")
-                )
+                .route(predicateSpec -> predicateSpec.path("/api/v1/users/**").uri("http://localhost:8081/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/products/**").uri("http://localhost:8082/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/carts/**").uri("http://localhost:8083/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/payments/**").uri("http://localhost:8084/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/brands/**").uri("http://localhost:8085/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/orders/**").uri("http://localhost:8086/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/mails/**").uri("http://localhost:8087/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/files/**").uri("http://localhost:8088/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/auth/**").uri("http://localhost:8089/"))
                 .build();
     }
 }
