@@ -20,6 +20,7 @@ public class GatewayConfig {
                 .route(predicateSpec -> predicateSpec.path("/api/v1/mails/**").uri("http://localhost:8087/"))
                 .route(predicateSpec -> predicateSpec.path("/api/v1/files/**").uri("http://localhost:8088/"))
                 .route(predicateSpec -> predicateSpec.path("/api/v1/auth/**").uri("http://localhost:8089/"))
+                .route(predicateSpec -> predicateSpec.path("/api/v1/feedbacks/**").uri("http://localhost:8090/"))
                 .build();
     }
 }

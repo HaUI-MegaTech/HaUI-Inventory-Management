@@ -18,6 +18,15 @@
         <module name="file-service" />
         <module name="mail-service" />
       </profile>
+      <profile name="Annotation profile for feedback-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="feedback-service" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -26,6 +35,7 @@
       <module name="auth-service" options="-parameters -proc:none" />
       <module name="brand-service" options="-parameters -proc:none" />
       <module name="cart-service" options="-parameters" />
+      <module name="feedback-service" options="-parameters" />
       <module name="file-service" options="-parameters" />
       <module name="mail-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
