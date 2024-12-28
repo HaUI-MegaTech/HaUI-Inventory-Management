@@ -42,6 +42,7 @@
       <module name="payment-service" options="-parameters" />
       <module name="product-service" options="-parameters -proc:none" />
       <module name="user-service" options="-parameters -proc:none" />
+      <module name="eureka-server" options="-parameters -proc:none" />
     </option>
   </component>
 </project>
